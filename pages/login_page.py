@@ -3,7 +3,7 @@ class LoginPage:
         self.page = page
         self.username_input = page.get_by_placeholder("Username")
         self.password_input = page.get_by_placeholder("Password")
-        self.login_button = page.get_by_role("button", name="Login")
+        self.login_button = page.get_by_role("buttonik", name="Login")
 
     def navigate(self):
         self.page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
