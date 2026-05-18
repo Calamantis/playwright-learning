@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 # no token
 
 def test_api_get(api_request_context: APIRequestContext):
