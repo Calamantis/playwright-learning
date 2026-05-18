@@ -1,5 +1,10 @@
 import pytest
+import os
 from playwright.sync_api import Playwright, APIRequestContext, expect
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # no token
 
@@ -27,8 +32,7 @@ def api_request_context(playwright: Playwright) -> APIRequestContext:
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization": "TOKEN",
-        "X-api-key": "free_user_3DrbRdS9HQUTOAEk40o6LM2lpDY"
+        "X-api-key": os.getenv("API_KEY")
     }
     request_context = playwright.request.new_context(
         base_url="https://reqres.in", extra_http_headers=headers
